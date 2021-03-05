@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1e2140;
+}
+
+.d-clock {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: #151932;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-clock::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: scale(1.3);
+    background: linear-gradient(130deg, #444776, #151932);
+    filter: blur(50px);
+}
+
+.d-clock::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: scale(1.15);
+    background: linear-gradient(310deg, #2b2d53, #151932);
+}
+
+.inner-circle {
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    background: transparent;
+    border: 10px solid #fd6e70;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.inner-circle div {
+    display: flex;
+    font-size: 7.5em;
+    color: #d6e0fa;
+}
+
+.inner-circle div #dot {
+    animation: animate 1s cubic-bezier(1, 0, 0, 0) infinite;
+}
+
+@keyframes animate {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.inner-circle .time {
+    position: absolute;
+    top: 72%;
+    left: 30%;
+    font-size: 2em;
+    color: #d6e0fa;
+    text-transform: uppercase;
+    letter-spacing: 25px;
+}
